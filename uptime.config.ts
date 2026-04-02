@@ -57,14 +57,14 @@ const workerConfig: WorkerConfig = {
     },
     // Example TCP Monitor
     {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
+      id: 'tcp',
+      name: 'Web Pan TCP',
       // `method` should be `TCP_PING` for tcp monitors
       method: 'TCP_PING',
       // `target` should be `host:port` for tcp monitors
       target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
+      tooltip: 'My Pan',
+      statusPageLink: 'https://pan.eo.2xgh.qzz.io',
       timeout: 5000,
     },
   ],
