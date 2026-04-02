@@ -62,7 +62,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be `TCP_PING` for tcp monitors
       method: 'TCP_PING',
       // `target` should be `host:port` for tcp monitors
-      target: 'host:port',
+      target: 'pan.2xxt.qzz.io:5212',
       tooltip: 'My Pan',
       statusPageLink: 'https://pan.eo.2xgh.qzz.io',
       timeout: 5000,
