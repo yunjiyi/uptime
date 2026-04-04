@@ -1,7 +1,3 @@
-header.Header_header__072v2 {
-  display: none !important;
-}
-
-p.mantine-Text-root:last-of-type {
-  display: none !important;
+header.Header_header__072v2, main.__className_f367f3 > div:last-child {
+    display: none !important;
 }
