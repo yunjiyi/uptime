@@ -55,6 +55,7 @@ const workerConfig: WorkerConfig = {
       // checkProxyFallback: true,
 //    },
     // Example TCP Monitor
+    // 自定义监控站点内容
     {
       id: 'cdns.nyc.mn',
       name: 'Uncloak',
