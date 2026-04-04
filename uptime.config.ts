@@ -57,20 +57,24 @@ const workerConfig: WorkerConfig = {
     // Example TCP Monitor
     // 自定义监控站点内容
     {
-      id: 'cdns.nyc.mn',
-      name: 'Uncloak',
+      id: 'FreeAPI',
+      // 显示的名字
+      name: 'FreeAPI',
       method: 'GET',
-      target: 'https://cdns.nyc.mn',
-      tooltip: 'FreeAPI',
-      statusPageLink: 'https://cdns.nyc.mn',
+      // 实际监控地址
+      target: 'https://freeapi.uncloak.cloud/sklivedemo',
+      // 悬停显示的名称
+      tooltip: 'https://freeapi.uncloak.cloud/sklivedemo',
+      // 跳转地址
+      statusPageLink: 'https://freeapi.uncloak.cloud/sklivedemo',
       timeout: 10000,
     },
     {
-      id: 'demo.huangjie.ggff.net',
+      id: 'Site',
       name: 'Site',
       method: 'GET',
       target: 'https://demo.huangjie.ggff.net',
-      tooltip: 'Uncloak Site',
+      tooltip: 'https://demo.huangjie.ggff.net',
       statusPageLink: 'https://demo.huangjie.ggff.net',
       timeout: 10000,
     },
