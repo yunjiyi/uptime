@@ -1,3 +1,7 @@
 header.Header_header__072v2, main.__className_f367f3 > div:last-child {
     display: none !important;
 }
+
+body {
+    background-color: transparent !important;
+}
