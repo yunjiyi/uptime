@@ -10,9 +10,8 @@ const pageConfig: PageConfig = {
   title: "LegspCpd's Status Page",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/legspCpd846', label: 'GitHub' },
+    { link: 'https://github.com/yunjiyi', label: 'GitHub' },
     { link: 'https://blog.2xxt.qzz.io/', label: 'Blog' },
-    { link: 'mailto:me@legspcpd.qzz.io', label: 'Email Me', highlight: true },
   ],
 }
 
@@ -20,28 +19,28 @@ const workerConfig: WorkerConfig = {
   // Define all your monitors here
   monitors: [
     // Example HTTP Monitor
-    {
+//    {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+//      id: 'foo_monitor',
       // `name` is used at status page and callback message
-      name: 'LegspCpd的网盘',
+//      name: 'LegspCpd的网盘',
       // `method` should be a valid HTTP Method
-      method: 'GET',
+//      method: 'GET',
       // `target` is a valid URL
-      target: 'https://pan.eo.2xgh.qzz.io',
+//      target: 'https://pan.eo.2xgh.qzz.io',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
+//      tooltip: 'This is a tooltip for this monitor',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://pan.eo.2xgh.qzz.io',
+//      statusPageLink: 'https://pan.eo.2xgh.qzz.io',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
+//      expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
+//      timeout: 10000,
       // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'uptime',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
+//      headers: {
+//        'User-Agent': 'uptime',
+//        Authorization: 'Bearer YOUR_TOKEN_HERE',
+//      },
       // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
       // body: 'Hello, world!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
@@ -54,18 +53,25 @@ const workerConfig: WorkerConfig = {
       // checkProxy: 'worker://weur',
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       // checkProxyFallback: true,
-    },
+//    },
     // Example TCP Monitor
     {
-      id: 'tcp',
-      name: 'Web Pan TCP',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
-      // `target` should be `host:port` for tcp monitors
-      target: 'pan.2xxt.qzz.io:5212',
-      tooltip: 'My Pan',
-      statusPageLink: 'https://pan.eo.2xgh.qzz.io',
-      timeout: 5000,
+      id: 'cdns.nyc.mn',
+      name: 'Uncloak',
+      method: 'GET',
+      target: 'https://cdns.nyc.mn',
+      tooltip: 'FreeAPI',
+      statusPageLink: 'https://cdns.nyc.mn',
+      timeout: 10000,
+    },
+    {
+      id: 'demo.huangjie.ggff.net',
+      name: 'Site',
+      method: 'GET',
+      target: 'https://demo.huangjie.ggff.net',
+      tooltip: 'Uncloak Site',
+      statusPageLink: 'https://demo.huangjie.ggff.net',
+      timeout: 10000,
     },
   ],
   // [Optional] Notification settings
