@@ -62,7 +62,7 @@ const workerConfig: WorkerConfig = {
       name: 'FreeAPI',
       method: 'GET',
       // 实际监控地址
-      target: 'https://freeapi.uncloak.cloud/sklivedemo',
+      target: 'https://freeapi.uncloak.cloud/sklivedemo/info',
       // 悬停显示的名称
       tooltip: 'https://freeapi.uncloak.cloud/sklivedemo',
       // 跳转地址
