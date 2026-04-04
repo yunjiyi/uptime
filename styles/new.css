@@ -1,7 +1,7 @@
-header.Header_header__072v2, main.__className_f367f3 > div:last-child {
+header.Header_header__072v2, main.__className_f367f3 > div:last-child, .m-3eebeb36.mantine-Divider-root {
     display: none !important;
 }
 
-body {
-    background-color: transparent !important;
+html[data-mantine-color-scheme="dark"] body {
+  background-color: #1c1c1e !important;
 }
