@@ -2,6 +2,8 @@ header.Header_header__072v2, main.__className_f367f3 > div:last-child, .m-3eebeb
     display: none !important;
 }
 
+html[data-mantine-color-scheme="light"] body,
 html[data-mantine-color-scheme="dark"] body {
-  background-color: #1c1c1e !important;
+  background-color: transparent !important;
 }
+
