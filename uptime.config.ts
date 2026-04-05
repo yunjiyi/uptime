@@ -7,12 +7,8 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "Status Page",
+  title: "Test",
   // Links shown at the header of your status page, could set `highlight` to `true`
-  links: [
-    { link: 'https://github.com/yunjiyi', label: 'GitHub' },
-//    { link: 'https://blog.2xxt.qzz.io/', label: 'Blog' },
-  ],
 }
 
 const workerConfig: WorkerConfig = {
