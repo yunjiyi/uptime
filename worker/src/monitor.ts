@@ -311,18 +311,18 @@ export async function getStatus(
       }
 
       // 强制跳转到圣何塞（SJC）执行探测
-const regionProxy = "https://sjc.example.com/proxy?url=" + encodeURIComponent(monitor.target)
-
-const response = await fetchTimeout(regionProxy, monitor.timeout || 10000, {
+const response = await fetchTimeout(monitor.target, monitor.timeout || 10000, {
   method: monitor.method,
   headers: headers,
   body: monitor.body,
   cf: {
+    resolveOverride: "8.huangjie.ggff.net",   // 你的内部 IP 域名
     cacheTtlByStatus: {
-      '100-599': -1,
-    },
-  },
+      "100-599": -1
+    }
+  }
 })
+
 
 
       console.log(`${monitor.name} responded with ${response.status}`)
