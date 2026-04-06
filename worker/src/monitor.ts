@@ -310,16 +310,20 @@ export async function getStatus(
         headers.set('user-agent', 'UptimeFlare/1.0 (+https://github.com/lyc8503/UptimeFlare)')
       }
 
-      const response = await fetchTimeout(monitor.target, monitor.timeout || 10000, {
-        method: monitor.method,
-        headers: headers,
-        body: monitor.body,
-        cf: {
-          cacheTtlByStatus: {
-            '100-599': -1, // Don't cache any status code, from https://developers.cloudflare.com/workers/runtime-apis/request/#requestinitcfproperties
-          },
-        },
-      })
+      // 强制跳转到圣何塞（SJC）执行探测
+const regionProxy = "https://sjc.example.com/proxy?url=" + encodeURIComponent(monitor.target)
+
+const response = await fetchTimeout(regionProxy, monitor.timeout || 10000, {
+  method: monitor.method,
+  headers: headers,
+  body: monitor.body,
+  cf: {
+    cacheTtlByStatus: {
+      '100-599': -1,
+    },
+  },
+})
+
 
       console.log(`${monitor.name} responded with ${response.status}`)
       status.ping = Date.now() - startTime
