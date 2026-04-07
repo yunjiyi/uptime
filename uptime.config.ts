@@ -67,10 +67,10 @@ const workerConfig: WorkerConfig = {
     },
     {
       id: 'Site',
-      name: 'Site',
+      name: 'cdns',
       method: 'GET',
-      target: 'https://demo.huangjie.ggff.net',
-//      tooltip: 'https://demo.huangjie.ggff.net',
+      target: 'https://cdns.nyc.mn',
+      tooltip: '网站',
 //      statusPageLink: 'https://demo.huangjie.ggff.net',
       timeout: 10000,
     },
