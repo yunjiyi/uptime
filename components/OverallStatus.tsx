@@ -162,6 +162,14 @@ export default function OverallStatus({
   return (
     <Container size="md" mt="xl">
       <Center>{icon}</Center>
+
+     {/* 新增的多语言文本 */}
+    <Center mt="sm">
+      <div style={{ textAlign: 'center', color: '#129900', fontSize: '18px' }}>
+        {t('cloudflareLatencyDescription')}
+      </div>
+    </Center>
+    
       <Title mt="sm" style={{ textAlign: 'center' }} order={1}>
         {statusString}
       </Title>
