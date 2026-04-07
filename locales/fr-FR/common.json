@@ -33,5 +33,6 @@
   "All": "Tous",
   "Select monitor": "Sélectionner un moniteur",
   "Backwards": "← Précédent",
-  "Forward": "Suivant →"
+  "Forward": "Suivant →",
+  "cloudflareLatencyDescription": "Latence entre un nœud POP global aléatoire de Cloudflare et le service cible"
 }
