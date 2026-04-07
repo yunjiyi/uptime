@@ -33,5 +33,6 @@
   "All": "全部",
   "Select monitor": "選取站點",
   "Backwards": "← 上個月",
-  "Forward": "下個月 →"
+  "Forward": "下個月 →",
+  "cloudflareLatencyDescription": "Cloudflare 全球隨機 POP 節點到目標服務的延遲"
 }
