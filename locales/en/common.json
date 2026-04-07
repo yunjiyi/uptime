@@ -33,5 +33,7 @@
   "All": "All",
   "Select monitor": "Select monitor",
   "Backwards": "← Backwards",
-  "Forward": "Forward →"
+  "Forward": "Forward →",
+  "cloudflareLatencyDescription": "Latency from Cloudflare's randomly selected global POP to the target service"
+
 }
