@@ -30,7 +30,177 @@ export default function OverallStatus({
   let groupedMonitor = (group && Object.keys(group).length > 0) || false
 
   let statusString = ''
-  let icon = <IconAlertCircle style={{ width: 64, height: 64, color: '#b91c1c' }} />
+  // let icon = <IconAlertCircle style={{ width: 64, height: 64, color: '#b91c1c' }} />
+
+  let icon = (
+    <svg
+  width="64"
+  height="64"
+  viewBox="0 0 512 512"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="yellow" />
+      <stop offset="100%" stopColor="red" />
+    </linearGradient>
+  </defs>
+
+  <circle
+    cx="256"
+    cy="256"
+    r="248"
+    fill="url(#g)"
+    fillOpacity="0.1"
+    stroke="url(#g)"
+    strokeWidth="16"
+  >
+    <animate
+      attributeName="stroke-opacity"
+      values=".6;1;.6"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <path
+    d="M96 256L176 256L208 196L256 316L304 196L336 256L416 256"
+    stroke="url(#g)"
+    strokeWidth="24"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    filter="url(#glow)"
+  >
+    <animate
+      attributeName="stroke-dasharray"
+      from="0,1000"
+      to="1000,0"
+      dur="1.5s"
+      repeatCount="indefinite"
+    />
+    <animate
+      attributeName="stroke-opacity"
+      values=".4;1;.4"
+      dur="1.5s"
+      repeatCount="indefinite"
+    />
+  </path>
+
+  <g filter="url(#glow)">
+    <circle
+      cx="256"
+      cy="256"
+      r="32"
+      fill="url(#g)"
+      fillOpacity="0"
+      stroke="url(#g)"
+      strokeWidth="3"
+    >
+      <animate
+        attributeName="r"
+        keyTimes="0;0.7;0.701;1"
+        values="32;200;32;32"
+        dur="3s"
+        begin="0s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="stroke-opacity"
+        keyTimes="0;0.7;0.701;1"
+        values=".8;0;0;.8"
+        dur="3s"
+        begin="0s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle
+      cx="256"
+      cy="256"
+      r="32"
+      fill="url(#g)"
+      fillOpacity="0"
+      stroke="url(#g)"
+      strokeWidth="3"
+    >
+      <animate
+        attributeName="r"
+        keyTimes="0;0.7;0.701;1"
+        values="32;200;32;32"
+        dur="3s"
+        begin="1.5s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="stroke-opacity"
+        keyTimes="0;0.7;0.701;1"
+        values=".8;0;0;.8"
+        dur="3s"
+        begin="1.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle
+      cx="256"
+      cy="256"
+      r="48"
+      fill="url(#g)"
+      fillOpacity="0.2"
+    >
+      <animate
+        attributeName="r"
+        values="42;52;42"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="fill-opacity"
+        values=".1;.3;.1"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle cx="256" cy="256" r="32" fill="url(#g)">
+      <animate
+        attributeName="r"
+        values="28;32;28"
+        dur="1.5s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="fill-opacity"
+        values=".8;1;.8"
+        dur="1.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+
+    <circle cx="256" cy="256" r="16" fill="#fff" fillOpacity="0.8">
+      <animate
+        attributeName="r"
+        values="14;16;14"
+        dur="1.5s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="fill-opacity"
+        values=".7;.9;.7"
+        dur="1.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+</svg>
+
+)
   if (state.overallUp === 0 && state.overallDown === 0) {
     statusString = t('No data yet')
   } else if (state.overallUp === 0) {
@@ -123,8 +293,8 @@ export default function OverallStatus({
     </filter>
 
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#10B981" />
-      <stop offset="100%" stopColor="#059669" />
+      <stop offset="0%" stopColor="#01ff5a" />
+      <stop offset="100%" stopColor="#01ff5a" />
     </linearGradient>
   </defs>
 
