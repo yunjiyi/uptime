@@ -293,8 +293,8 @@ export default function OverallStatus({
     </filter>
 
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#01ff5a" />
-      <stop offset="100%" stopColor="#01ff5a" />
+      <stop offset="0%" stopColor="rgb(4, 219, 79)" />
+      <stop offset="100%" stopColor="rgb(4, 219, 79)" />
     </linearGradient>
   </defs>
 
