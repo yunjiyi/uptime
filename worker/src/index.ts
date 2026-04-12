@@ -57,24 +57,38 @@ const Worker = {
       //   })
       // }
 
+      // Update incidents & backfill 90-day history
       const ninetyDaysAgo = currentTimeSecond - 90 * 24 * 60 * 60;
+      let needsBackfill = false;
+
       if (state.incidentLen(monitor.id) === 0) {
         state.appendIncident(monitor.id, {
           start: [ninetyDaysAgo],
           end: ninetyDaysAgo,
           error: ['dummy'],
-        })
+        });
+        needsBackfill = true;
       } else {
-        const firstIncident = state.getIncident(monitor.id, 0)
+        const firstIncident = state.getIncident(monitor.id, 0);
         if (firstIncident.start[0] > ninetyDaysAgo) {
-          // 如果首次监控时间晚于90天前，则在头部插入补齐记录
           state.unshiftIncident(monitor.id, {
             start: [ninetyDaysAgo],
             end: ninetyDaysAgo,
             error: ['dummy'],
-          })
+          });
+          needsBackfill = true;
         }
       }
+
+      // 🔑 核心修复：强制重置 lastUpdate 为 0，触发立即写入 D1，绕过冷却期
+      // 解决前端数据因写入延迟而“闪烁/消失”的问题
+      if (needsBackfill) {
+        state.data.lastUpdate = 0;
+      }
+
+
+
+      //
       
 
       // Then lastIncident here must not be null
