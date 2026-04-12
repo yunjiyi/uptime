@@ -74,6 +74,15 @@ const workerConfig: WorkerConfig = {
 //      statusPageLink: 'https://demo.huangjie.ggff.net',
       timeout: 10000,
     },
+     {
+      id: 'ceshi',
+      name: '这是一个测试',
+      method: 'GET',
+      target: 'https://bing.com',
+      tooltip: '微软',
+//      statusPageLink: 'https://demo.huangjie.ggff.net',
+      timeout: 10000,
+    },
   ],
   // [Optional] Notification settings
   notification: {
