@@ -47,15 +47,35 @@ const Worker = {
       // Update counters
       status.up ? state.data.overallUp++ : state.data.overallDown++
 
-      // Update incidents
-      // Create a dummy incident to store the start time of the monitoring and simplify logic
+      // // Update incidents
+      // // Create a dummy incident to store the start time of the monitoring and simplify logic
+      // if (state.incidentLen(monitor.id) === 0) {
+      //   state.appendIncident(monitor.id, {
+      //     start: [currentTimeSecond],
+      //     end: currentTimeSecond,
+      //     error: ['dummy'],
+      //   })
+      // }
+
+      const ninetyDaysAgo = currentTimeSecond - 90 * 24 * 60 * 60;
       if (state.incidentLen(monitor.id) === 0) {
         state.appendIncident(monitor.id, {
-          start: [currentTimeSecond],
-          end: currentTimeSecond,
+          start: [ninetyDaysAgo],
+          end: ninetyDaysAgo,
           error: ['dummy'],
         })
+      } else {
+        const firstIncident = state.getIncident(monitor.id, 0)
+        if (firstIncident.start[0] > ninetyDaysAgo) {
+          // 如果首次监控时间晚于90天前，则在头部插入补齐记录
+          state.unshiftIncident(monitor.id, {
+            start: [ninetyDaysAgo],
+            end: ninetyDaysAgo,
+            error: ['dummy'],
+          })
+        }
       }
+      
 
       // Then lastIncident here must not be null
       let lastIncident = state.getIncident(monitor.id, state.incidentLen(monitor.id) - 1)
